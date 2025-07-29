@@ -10,4 +10,92 @@ html {
 /* khôi phục lại cỡ chữ mặc định tính theo rem */
 body {
   font-size: 1.6rem;
+
+  /* cài đặt font mặc định */
+  font-family: "Inter", sans-serif;
+}
+
+/* ==============common - code các thuộc tính dùng chung cho cả website*/
+a {
+  /* bỏ gạch chân cho các thẻ a */
+  text-decoration: none;
+}
+
+.main-content {
+  width: 1248px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(100% - 48px);
+}
+
+.btn {
+  display: block;
+  padding: 0 23px;
+  line-height: 49px;
+  min-width: 62px;
+  color: #ffff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: #426b1f;
+  border-radius: 8px;
+}
+/* ==============common - code phần header */
+/* tác động vào class body là con của class header
+vì thẻ body đang bọc tất cả các phần như: logo, thanh nav menu và cả nút button
+---ghi tường minh như thế này để tránh ảnh hưởng đến phần code ở sau vì có thể 
+sử dụng lại class body ở các phần code sau */
+.header.fixed {
+  position: sticky;
+  top: -28px;
+}
+
+.header {
+  background-color: #fffcf4;
+}
+
+.header .body {
+  display: flex;
+  align-items: center;
+  padding: 32px 0 8px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+/* xoay ngang phần thanh menu */
+.nav ul {
+  display: flex;
+}
+
+.nav a {
+  position: relative;
+  /* color: #000; */
+  color: #5f5b53;
+  font-size: 1.6rem;
+  padding: 8px 69px;
+}
+
+.nav li.active a,
+.nav a:hover {
+  /* color: #5f5b53; */
+  color: #000;
+  font-weight: 600;
+}
+
+.nav li.active a::after {
+  display: block;
+  position: absolute;
+  left: 69px;
+  bottom: 8px;
+  content: "";
+  width: 11px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+}
+
+.header .btn-basket {
+  min-width: 126px;
 }
